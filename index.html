@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+        
+        <title>Conversor dec/hex/bin</title>
+    </head>
+
+    <body>
+        <div class="main">
+            
+            <!-- Título -->
+            <h1>Conversor Decimal/Hexadecimal/Binário</h1>
+
+            <!-- Formulário -->
+            <form name="conversor">
+                
+                <!-- Escolhendo a conversão a ser realizada -->
+                <h3>Escolha a conversão a ser realizada</h3>
+                <input type="radio" id="num1" value="decHex" name="conversao">
+                <label for="decHex">Decimal x Hexadecimal</label>
+                <br>
+                <input type="radio" id="num2" value="decBin" name="conversao">
+                <label for="decBin">Decimal x Binário</label>
+                <br>
+                <input type="radio" id="num3" value="hexDec" name="conversao">
+                <label for="hexDec">Hexadecimal x Decimal</label>
+                <br>
+                <input type="radio" id="num4" value="hexBin" name="conversao">
+                <label for="hexBin">Hexadecimal x Binário</label>
+                <br>
+                <input type="radio" id="num5" value="binDec" name="conversao">
+                <label for="binDec">Binário x Decimal</label>
+                <br>
+                <input type="radio" id="num6" value="binHex" name="conversao">
+                <label for="binHex">Binário x Hexadecimal</label>
+                <!-- FIM Radio buttons -->
+                
+                <br>
+                <br>
+                <br>
+
+                <!-- Conversão -->
+                <label for="numero1">Insira um número:</label>
+                <br>
+                <input type="text" id="numero1" name="numero1">
+                <br>
+                <br>
+                <input type="button" name="btnConverter" value="Converter" onclick="conversao(conversor)">
+                <br>
+                <br>
+                <label for="numero2">Resultado:</label>
+                <br>
+                <input type="text" id="numero2" name="numero2" disabled>
+                
+            </form>
+            <!-- FIM do Formulário-->
+        </div>
+    </body>
+</html>
