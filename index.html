@@ -16,26 +16,26 @@
             <h1>Conversor Decimal/Hexadecimal/Binário</h1>
 
             <!-- Formulário -->
-            <form name="conversor">
+            <form name="conversor" method="POST">
                 
                 <!-- Escolhendo a conversão a ser realizada -->
                 <h3>Escolha a conversão a ser realizada</h3>
-                <input type="radio" id="num1" value="decHex" name="conversao">
+                <input type="radio" id="conversao1" value="decHex" name="conversao">
                 <label for="decHex">Decimal x Hexadecimal</label>
                 <br>
-                <input type="radio" id="num2" value="decBin" name="conversao">
+                <input type="radio" id="conversao2" value="decBin" name="conversao">
                 <label for="decBin">Decimal x Binário</label>
                 <br>
-                <input type="radio" id="num3" value="hexDec" name="conversao">
+                <input type="radio" id="conversao3" value="hexDec" name="conversao">
                 <label for="hexDec">Hexadecimal x Decimal</label>
                 <br>
-                <input type="radio" id="num4" value="hexBin" name="conversao">
+                <input type="radio" id="conversao4" value="hexBin" name="conversao">
                 <label for="hexBin">Hexadecimal x Binário</label>
                 <br>
-                <input type="radio" id="num5" value="binDec" name="conversao">
+                <input type="radio" id="conversao5" value="binDec" name="conversao">
                 <label for="binDec">Binário x Decimal</label>
                 <br>
-                <input type="radio" id="num6" value="binHex" name="conversao">
+                <input type="radio" id="conversao6" value="binHex" name="conversao">
                 <label for="binHex">Binário x Hexadecimal</label>
                 <!-- FIM Radio buttons -->
                 
@@ -49,7 +49,9 @@
                 <input type="text" id="numero1" name="numero1">
                 <br>
                 <br>
-                <input type="button" name="btnConverter" value="Converter" onclick="conversao(conversor)">
+                <input type="button" id="btnConverter" name="btnConverter"
+                value="Converter">
+                <input type="reset" id="btnReset" name="btnReset" value="Limpar">
                 <br>
                 <br>
                 <label for="numero2">Resultado:</label>
