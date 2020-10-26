@@ -57,19 +57,38 @@ function conversaoDecHex(numero)
 
 function conversaoDecBin(numero)
 {
-    alert("conversaoDecBin");    
+    var resultado = "";
+    
+    //Variável auxiliar para receber resto das divisões sucessivas
+    var aux = "";
+    
+    //Loop que representa as divisões sucessivas
+    do
+    {
+        aux = aux.concat(numero % 2);
+        numero = Math.floor(numero/2);
+    }
+    while(numero != 0);
+
+    //Transforma os elementos da variável auxiliar em instâncias de um vetor e inverte as posições 
+    aux = aux.split("");
+    aux.reverse();
+    
+    //Loop que concatena os valores na variável resultado
+    for (let i = 0; i < aux.length; i++)
+    {
+        resultado = resultado.concat(aux[i]);
+    } 
+
+    //Exibe o resultado no input
+    document.getElementById("numero2").value = resultado;   
 }
 
 function conversaoHexDec(numero)
 {
     var resultado = 0;
-    var negativo = false;
 
-    if (numero[0] === "-")
-    {
-        negativo = true;        
-    }
-
+    //Verifica se o número possui mais de um algarismo para saber o valor da variável expoente
     if (numero.length > 1)
     {
         var exp = 16 * (numero.length - 1);        
@@ -121,12 +140,6 @@ function conversaoHexDec(numero)
         exp /= 16;    
     }
 
-    //Converte o resultado caso o mesmo deva ser negativo
-    if (negativo)
-    {
-        resultado *= -1;        
-    }
-
     //Exibe o resultado no input
     document.getElementById("numero2").value = resultado;
 }
@@ -138,7 +151,20 @@ function conversaoHexBin(numero)
 
 function conversaoBinDec(numero)
 {
-    alert("conversaoBinDec");
+    var resultado = 0;
+    
+    //Variável que armazena o expoente a ser trabalhado nas multiplicações
+    var exp = numero.length - 1;
+
+    //Loop para multiplicar cada algarismo por 2 elevado ao expoente
+    for (let i = 0; i < numero.length; i++)
+    {
+        resultado += numero[i] * 2 ** exp;
+        exp--; 
+    }
+    
+    //Exibe o resultado no input
+    document.getElementById("numero2").value = resultado;
 }
 
 function conversaoBinHex(numero)
