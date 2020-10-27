@@ -52,7 +52,69 @@ function conversao()
 
 function conversaoDecHex(numero)
 {
-    alert("conversaoDecHex");
+    var resultado = "";
+
+    //Variável auxiliar para receber resto das divisões sucessivas
+    var aux = "";
+    
+    //Loop que representa as divisões sucessivas
+    do
+    {
+        //Switch para verificar se o módulo de aux é um valor maior que 10
+        switch (numero % 16)
+        {
+            case 10:
+                
+                aux = aux.concat("A");
+                break;
+        
+            case 11:
+                
+                aux = aux.concat("B");
+                break;
+        
+            case 12:
+                
+                aux = aux.concat("C");
+                break;
+        
+            case 13:
+                
+                aux = aux.concat("D");
+                break;
+        
+            case 14:
+                
+                aux = aux.concat("E");
+                break;
+        
+            case 15:
+                
+                aux = aux.concat("F");
+                break;
+        
+            default:
+                
+                aux = aux.concat(numero % 16);
+                break;
+        }
+        
+        numero = Math.floor(numero/16);
+    }
+    while(numero != 0);
+
+    //Transforma os elementos da variável auxiliar em instâncias de um vetor e inverte as posições 
+    aux = aux.split("");
+    aux.reverse();
+    
+    //Loop que concatena os valores na variável resultado
+    for (let i = 0; i < aux.length; i++)
+    { 
+        resultado = resultado.concat(aux[i]);
+    } 
+
+    //Exibe o resultado no input
+    document.getElementById("numero2").value = resultado;
 }
 
 function conversaoDecBin(numero)
