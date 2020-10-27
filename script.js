@@ -231,5 +231,151 @@ function conversaoBinDec(numero)
 
 function conversaoBinHex(numero)
 {
-    alert("conversaoBinHex");
+    var resultado = "";
+    var aux = "";
+
+    //Loop para separar os algarismos e convertê-los em grupos de 4
+    for (let i = numero.length - 1; i >= 0; i--)
+    {
+        aux = numero[i] + aux;
+
+        //If para tratar situação onde o(s) último(s) algarismos não completa(m) um grupo de 4
+        if ((numero.length - i) > (numero.length - 1) && aux.length < 4)
+        {
+            //Switch que insere zeros a esquerda do(s) algarismo(s) restantes
+            switch (aux.length)
+            {
+                case 1:
+                    
+                    aux = "000" + aux;
+                    break;
+            
+                case 2:
+                    
+                    aux = "00" + aux;
+                    break;
+            
+                case 3:
+                    
+                    aux = "0" + aux;
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+        
+        //Quando a variável auxiliar possui quatro algarismos, a conversão é realizada
+        if (aux.length == 4)
+        {
+            switch (aux)
+            {
+                case "0000":
+                    
+                    resultado = resultado.concat("0");
+                    aux = "";
+                    break;
+            
+                case "0001":
+                    
+                    resultado = resultado.concat("1");
+                    aux = "";
+                    break;
+            
+                case "0010":
+                  
+                    resultado = resultado.concat("2");
+                    aux = "";
+                    break;
+                    
+                case "0011":
+                    
+                    resultado = resultado.concat("3");
+                    aux = "";
+                    break;
+                
+                case "0100":
+                        
+                    resultado = resultado.concat("4");
+                    aux = "";
+                    break;
+                
+                case "0101":
+                      
+                    resultado = resultado.concat("5");
+                    aux = "";
+                    break;
+                
+                case "0110":
+                    
+                    resultado = resultado.concat("6");
+                    aux = "";
+                    break;
+                
+                case "0111":
+                        
+                    resultado = resultado.concat("7");
+                    aux = "";
+                    break;
+                
+                case "1000":
+                      
+                    resultado = resultado.concat("8");
+                    aux = "";
+                    break;
+                        
+                case "1001":
+                        
+                    resultado = resultado.concat("9");
+                    aux = "";
+                    break;
+                    
+                case "1010":
+                            
+                    resultado = resultado.concat("A");
+                    aux = "";
+                    break;
+                    
+                case "1011":
+                          
+                    resultado = resultado.concat("B");
+                    aux = "";
+                    break;
+
+                case "1100":
+                          
+                    resultado = resultado.concat("C");
+                    aux = "";
+                    break;
+
+                case "1101":
+                          
+                    resultado = resultado.concat("D");
+                    aux = "";
+                    break;
+
+                case "1110":
+                              
+                    resultado = resultado.concat("E");
+                    aux = "";
+                    break;
+
+                case "1111":
+                                  
+                    resultado = resultado.concat("F");
+                    aux = "";
+                    break;
+                default:
+                    break;
+            }           
+        }
+    }
+
+    //Inverte a ordem dos algarismos do resultado
+    resultado = resultado.split("");
+    resultado.reverse();
+    resultado = resultado.join("");
+
+    //Exibe o resultado no input
+    document.getElementById("numero2").value = resultado;
 }
