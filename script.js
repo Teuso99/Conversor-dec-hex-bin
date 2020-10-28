@@ -208,7 +208,106 @@ function conversaoHexDec(numero)
 
 function conversaoHexBin(numero)
 {
-    alert("conversaoHexBin");    
+    var resultado = "";
+
+    //Variável auxiliar para conversão dos algarismos
+    var aux = "";
+
+    //Loop para converter os algarismos um por vez
+    for (let i = 0; i < numero.length; i++)
+    {
+        //Switch que converte um algarismo hexadecimal e armazena na variável aux
+        switch (numero[i])
+        {
+            case "0":
+                
+                aux = "0000";
+                break;
+        
+            case "1":
+                
+                aux = "0001";
+                break;
+
+            case "2":
+                
+                aux = "0010";
+                break;
+                     
+            case "3":
+                
+                aux = "0011";
+                break;
+
+            case "4":
+                
+                aux = "0100";
+                break;
+        
+            case "5":
+                
+                aux = "0101";
+                break;
+        
+            case "6":
+                
+                aux = "0110";
+                break;
+        
+            case "7":
+                
+                aux = "0111";
+                break;
+
+            case "8":
+                
+                aux = "1000";
+                break;
+                     
+            case "9":
+                
+                aux = "1001";
+                break;
+
+            case "A":
+                
+                aux = "1010";
+                break;
+        
+            case "B":
+                
+                aux = "1011";
+                break;
+        
+            case "C":
+                
+                aux = "1100";
+                break;
+                     
+            case "D":
+                
+                aux = "1101";
+                break;
+
+            case "E":
+                
+                aux = "1110";
+                break;
+        
+            case "F":
+                
+                aux = "1111";
+                break;
+        
+            default:
+                break;
+        }
+        
+        resultado = resultado.concat(aux);  
+    }
+
+    //Exibe o resultado no input
+    document.getElementById("numero2").value = resultado;    
 }
 
 function conversaoBinDec(numero)
